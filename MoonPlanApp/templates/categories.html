@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Available activities:</h3>
+<ul>
+    {% for activitie in activities %}
+    <li>{{activitie}}</li>
+    {% endfor %}
+</ul>
+
+<style>
+    h3
+    {
+        font-family: 'Brush Script MT', cursive;
+        text-align: center;
+        font-size: 50px;
+        color: #5900ff;
+    }
+    ul
+    {
+        text-align: center;
+        font-size: large;
+        font-family: Arial;
+        background-color: whitesmoke;
+        border-radius: 50px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(1,0,0,0.19);
+
+
+
+    }
+</style>
+
+
+{% endblock %}

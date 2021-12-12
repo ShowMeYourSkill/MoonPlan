@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<h1>Welcome to The MoonPlan</h1>
+<img src="/static/logo.png" class="center"/>
+    <style>
+    h1 {
+        color: #5900ff;
+        text-align: center;
+        font-family: 'Brush Script MT', cursive;
+
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:90%;
+    }
+    </style>
+
+<div class="center">
+
+    <form method="get" action="{% url 'login' %}">
+    <button type="submit">Sign In</button>
+    </form>
+
+    <form method="get" action="{% url 'add_activity' %}">
+    <button type="submit">Add Activity</button>
+
+    </form>
+
+    <form method="get" action="{% url 'all_view' %}">
+    <button type="submit">Show Activities</button>
+
+    </form>
+
+    <form method="get" action="{% url 'groups_view' %}">
+    <button type="submit">Show Groups (Login Required)</button>
+
+    </form>
+
+
+</div>
+
+
+    <style>
+        .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                border-radius: 13px;
+                border-style: groove;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(1,0,0,0.19);
+        }
+
+        button{
+            color: blue;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(1,0,0,0.19);
+        }
+
+
+    </style>
+
+
+{% if user.is_authenticated %}
+
+  <h2> You're logged as: {{ user.username }}
+       <form method="get" action="{% url 'logout' %}">
+    <button type="submit">Logout</button>
+    </form>
+</h2>
+<style>
+    h2
+    {
+        font-family: 'Brush Script MT', cursive;
+        text-align: left;
+        color: red;
+
+
+    }
+</style>
+
+{% else %}
+
+
+
+
+{% endif %}
+
+
+{% block content %}
+Autor Projektu Bartłomiej Banasiewicz
+{% endblock %}
+</body>
+</html>
